@@ -1,0 +1,23 @@
+for (int i=0; i<3; i++) {
+    for (int j=0; j<3; j++) {
+        if (grid[i][j]!='-') {
+            if (j == 0) {
+                if (grid[i][j] == grid[i][j + 1] && grid[i][j + 1] == grid[i][j + 2]) {
+                    result = grid[i][j] + " wins";
+                }
+             }
+             if (i == 0) {
+                 if ((grid[i][j] == grid[i + 1][j] && grid[i + 1][j] == grid[i + 2][j]) ||
+                         (i == j && grid[i][j] == grid[i + 1][j + 1] && grid[i + 1][j + 1] == grid[i + 2][j + 2]) ||
+                         (j == 2 && grid[i][j] == grid[i + 1][j - 1] && grid[i + 1][j - 1] == grid[i + 2][j - 2])) {
+                     result = grid[i][j] + " wins";
+                 }
+              }
+              if (i!=0 && j!=0 && freeSpots==0) {
+                  result = "tie";
+              }
+         }
+     }
+ }
+ return result;
+ }
